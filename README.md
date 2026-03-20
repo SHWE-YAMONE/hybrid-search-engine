@@ -15,3 +15,12 @@ This project is a high-performance Information Retrieval (IR) System that demons
 **DevOps:** Docker (Multi-stage builds) and Pytest.
 
 **Frontend:** Tailwind CSS & Vanilla JavaScript.
+
+## Architected for Production
+Instead of building a simple "script," I designed this as a production-ready system:
+
+Containerized: The entire system is portable; a single docker build command compiles the C++ and sets up the environment.
+
+Scalable: The separation of the Crawler (I/O heavy) and the Engine (CPU heavy) allows them to scale independently.
+
+Test-Driven: Includes a suite of integration tests to ensure that the memory-safe C++ core communicates perfectly with the Python wrapper.
