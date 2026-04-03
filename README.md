@@ -16,11 +16,12 @@ This project is a high-performance Information Retrieval (IR) System that demons
 
 **Frontend:** Tailwind CSS & Vanilla JavaScript.
 
-## Architected for Production
-Instead of building a simple "script," I designed this as a production-ready system:
+## Getting Started
+### 1. Build (Docker)
+```
+# Build the image
+docker build -t search-engine .
 
-Containerized: The entire system is portable; a single docker build command compiles the C++ and sets up the environment.
-
-Scalable: The separation of the Crawler (I/O heavy) and the Engine (CPU heavy) allows them to scale independently.
-
-Test-Driven: Includes a suite of integration tests to ensure that the memory-safe C++ core communicates perfectly with the Python wrapper.
+# Run the container
+docker run -d -p 8000:8000 --name search-app search-engine
+```
